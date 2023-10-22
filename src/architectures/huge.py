@@ -16,8 +16,8 @@ class HugeArchitecture(AbstractArchitecture):
             layers.MaxPooling2D(),
             layers.Dropout(0.2),
             layers.Flatten(),
-            layers.Dense(128, activation='relu'),
-            layers.Dense(len(class_names), name="outputs")
+            layers.Dense(256, activation='relu'),
+            layers.Dense(len(class_names))
         ])
         model.compile(optimizer='adam',
                       loss=losses.SparseCategoricalCrossentropy(from_logits=True),

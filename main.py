@@ -4,11 +4,11 @@ import tensorflow as tf
 
 from src.manager import ArchitectureManager
 
-# manager = ArchitectureManager()
-# manager.plot()
+#manager = ArchitectureManager()
+#manager.plot()
 
 class_names = os.listdir('dataset')
-last_model = new_model = tf.keras.models.load_model("trained_models/example")
+last_model = tf.keras.models.load_model("trained_models/example")
 test_images_paths = os.listdir("testing")
 for image_path in test_images_paths:
     image = tf.expand_dims(tf.keras.utils.img_to_array(tf.keras.utils.load_img("testing/"+image_path,target_size=(180, 180))),0);
